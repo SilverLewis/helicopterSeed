@@ -9,6 +9,10 @@ public class GridObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Initialize();
+    }
+    protected virtual void Initialize()
+    {
         if (CollisionGrid.instance && referToSingletonGrid)
         {
             gridRef = CollisionGrid.instance;
@@ -16,9 +20,9 @@ public class GridObject : MonoBehaviour
             AddToGrid();
         }
     }
-    protected virtual void AddToGrid(bool snap=true)
+    protected virtual void AddToGrid(bool snap=true,bool debug=true)
     {
-        if (gridRef.GetPositionOfObject(this) == null)
+        if (gridRef.GetPositionOfObject(this,false) == null)
         {
             Vector3Int roundedPos = Vector3Int.CeilToInt(transform.position);
             if (snap) {
@@ -26,7 +30,7 @@ public class GridObject : MonoBehaviour
             }
             gridRef.AddObject(this,new Vector3Int?(roundedPos));
         }
-        else
+        else if(debug)
         {
             print("tried to add self to grid, but ur already in there.");
         }

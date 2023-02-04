@@ -41,12 +41,15 @@ public class CollisionGrid : MonoBehaviour
         return toReturn;
     }
     
-    public Vector3Int? GetPositionOfObject(GridObject objectToCheck)
+    public Vector3Int? GetPositionOfObject(GridObject objectToCheck,bool debug=true)
     {
         bool realPosition = InverseGrid.ContainsKey(objectToCheck);
         if (!realPosition)
         {
-             print("object not in grid");
+            if (debug)
+            {
+                print("object not in grid");
+            }
             return null;
         }
         else
@@ -57,7 +60,7 @@ public class CollisionGrid : MonoBehaviour
 
     public bool AddObject(GridObject objectToAdd,Vector3Int? position,bool overwrite=false)
     {
-        GridObject preExistingObject = ObjectGrid[position];
+        bool preExistingObject = ObjectGrid.ContainsKey(position);
         if (preExistingObject)
         {
             if (!overwrite)
@@ -68,6 +71,7 @@ public class CollisionGrid : MonoBehaviour
             else
             {
                 //destroy the pre-existing object
+                RemoveObject(ObjectGrid[position]);
             }
         }
 
