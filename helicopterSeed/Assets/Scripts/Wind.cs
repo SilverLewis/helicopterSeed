@@ -55,8 +55,6 @@ public class Wind : MonoBehaviour
         windSound.volume = windVolumeMinMax.x + soundDelta * soundPrecent;
         windSound.pitch = windPitchMinMax.x + pitchDelta * soundPrecent;
         windSound.panStereo = 0 + windPanDelta * getOffsetPercent();
-        print(windSound.pitch);
-
     }
 
     float getOffsetPercent() {

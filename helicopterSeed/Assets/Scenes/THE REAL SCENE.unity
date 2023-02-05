@@ -675,6 +675,7 @@ MonoBehaviour:
   StrengthMinMax: {x: 0.5, y: 5}
   changeTimeMinMax: {x: 1.5, y: 6}
   blowingtimeMinMax: {x: 4, y: 10}
+  updraftBlowingtimeMinMax: {x: 3, y: 5}
   windSound: {fileID: 483214818}
   windVolumeMinMax: {x: 0.05, y: 0.3}
   windPitchMinMax: {x: 0.7, y: 1.3}
@@ -7340,11 +7341,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seedPivot: {fileID: 6927536583032159079}
-  cameraMovementEnabled: 1
-  horizontalRotationSpeed: 20
+  horizontalRotationSpeed: 60
   verticalRotationSpeed: 30
   cameraMaxVerticalDegrees: 60
   cameraMinVerticalDegrees: 20
+  invertCamera: 1
 --- !u!4 &6927536584750594485
 Transform:
   m_ObjectHideFlags: 0

@@ -11,13 +11,14 @@ public class CameraController : MonoBehaviour
     [SerializeField] Transform seedPivot;
 
     [Space(5)]
-    [SerializeField] bool cameraMovementEnabled = true;
     [SerializeField] float horizontalRotationSpeed=30;
     [SerializeField] float verticalRotationSpeed=30;
     [SerializeField] float cameraMaxVerticalDegrees = 75;
     [SerializeField] float cameraMinVerticalDegrees = 15;
 
-    
+    [SerializeField] int invertCamera = 1;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,17 +36,24 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         SetNewForward();
-        if (cameraMovementEnabled) {
-            float verticalRotationChange =  Input.GetAxis("VerticalCamera") * Time.deltaTime * verticalRotationSpeed;
-            float horizontalRotationChange = Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed;
 
-           Vector3 rotation =cameraPivot.rotation.eulerAngles;
-
-            rotation.x = Mathf.Clamp(verticalRotationChange + rotation.x, cameraMinVerticalDegrees, cameraMaxVerticalDegrees);
-            rotation.y += horizontalRotationChange;
-
-           cameraPivot.rotation =  Quaternion.Euler(rotation);
+        if (Input.GetButtonDown("invertCamera")) {
+            invertCamera *=-1 ;
         }
+
+        float vert = Input.GetAxis("VerticalCamera");
+        print(vert);
+
+        float verticalRotationChange = vert*invertCamera * Time.deltaTime * verticalRotationSpeed;
+        float horizontalRotationChange =  Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed * invertCamera;
+
+        Vector3 rotation =cameraPivot.rotation.eulerAngles;
+
+        rotation.x = Mathf.Clamp(verticalRotationChange  + rotation.x , cameraMinVerticalDegrees, cameraMaxVerticalDegrees);
+        rotation.y += horizontalRotationChange ;
+
+        cameraPivot.rotation =  Quaternion.Euler(rotation);
+        
     }
 
     void SetNewForward()
