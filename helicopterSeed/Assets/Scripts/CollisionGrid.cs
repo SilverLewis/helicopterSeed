@@ -9,18 +9,23 @@ public class CollisionGrid : MonoBehaviour
 {
     public bool singleton;
     public static CollisionGrid instance;
-    Dictionary<Vector3Int?,GridObject> ObjectGrid= new Dictionary<Vector3Int?, GridObject>();
-    Dictionary<GridObject, Vector3Int?> InverseGrid = new Dictionary<GridObject, Vector3Int?>();
+    protected Dictionary<Vector3Int?,GridObject> ObjectGrid= new Dictionary<Vector3Int?, GridObject>();
+    protected Dictionary<GridObject, Vector3Int?> InverseGrid = new Dictionary<GridObject, Vector3Int?>();
+    int hardFloor = -1;
+    public GridObject floorReference;
     // Start is called before the first frame update
     void Awake()
     {
-        if (instance == null && singleton)
+        if (singleton)
         {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
@@ -30,13 +35,29 @@ public class CollisionGrid : MonoBehaviour
         
     }
 
-    public GridObject GetObjectAtPosition(Vector3Int? position)
+    public GridObject GetObjectAtPosition(Vector3Int? position,bool debug=true)
     {
-        GridObject toReturn = ObjectGrid[position];
-        if (toReturn == null)
+        GridObject toReturn;
+        
+        if (ObjectGrid.ContainsKey(position))
         {
-            print("no object at position");
-            
+            toReturn= ObjectGrid[position];
+        }
+        else
+        {
+            if (position.Value.y <= floorReference.transform.position.y)
+            {
+                if (debug)
+                {
+                    print("hit rock bottom");
+                }
+                return floorReference;
+            }
+            if (debug)
+            {
+                print("no object at position");
+            }
+            toReturn = null;
         }
         return toReturn;
     }

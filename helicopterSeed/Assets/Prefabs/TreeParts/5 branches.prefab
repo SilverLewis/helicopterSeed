@@ -61,8 +61,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3033667219593020291, guid: dffdf6d483250d144be2f94977f3715c, type: 3}
-  - {fileID: -3033667219593020291, guid: dffdf6d483250d144be2f94977f3715c, type: 3}
+  - {fileID: 2100000, guid: 0fc960f03d7283d4f8944fd8844a5051, type: 2}
+  - {fileID: 2100000, guid: 98b2f865faaf15a4598e8632a2cdcc98, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,6 +156,8 @@ MonoBehaviour:
   - {fileID: 6073307264412956251}
   - {fileID: 6073307262708562105}
   leafPoints: []
+  freeGrowPoints: []
+  weight: 500
 --- !u!1001 &7274673854989573450
 PrefabInstance:
   m_ObjectHideFlags: 0

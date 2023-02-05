@@ -11,7 +11,7 @@ public class GridObject : MonoBehaviour
     {
         Initialize();
     }
-    protected virtual void Initialize()
+    public virtual void Initialize()
     {
         if (CollisionGrid.instance && referToSingletonGrid)
         {
@@ -24,7 +24,7 @@ public class GridObject : MonoBehaviour
     {
         if (gridRef.GetPositionOfObject(this,false) == null)
         {
-            Vector3Int roundedPos = Vector3Int.CeilToInt(transform.position);
+            Vector3Int roundedPos = Vector3Int.RoundToInt(transform.position);
             if (snap) {
                 transform.position = roundedPos;
             }

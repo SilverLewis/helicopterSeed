@@ -56,6 +56,8 @@ MonoBehaviour:
   - {fileID: 2550340062205521178}
   - {fileID: 2550340062255909080}
   leafPoints: []
+  freeGrowPoints: []
+  weight: 500
 --- !u!1 &7103424990743159226
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,8 +119,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3033667219593020291, guid: c5de6b001cabed742ad16f65408e6c11, type: 3}
-  - {fileID: -3033667219593020291, guid: c5de6b001cabed742ad16f65408e6c11, type: 3}
+  - {fileID: 2100000, guid: 0fc960f03d7283d4f8944fd8844a5051, type: 2}
+  - {fileID: 2100000, guid: 98b2f865faaf15a4598e8632a2cdcc98, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
