@@ -36,9 +36,9 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cameraMovementEnabled) { 
-            float verticalRotationChange = Input.GetAxis("VerticalCamera") * Time.deltaTime * verticalRotationSpeed;
-            float horizontalRotationChange = -Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed;
+        if (cameraMovementEnabled) {
+            float verticalRotationChange = 0;// Input.GetAxis("VerticalCamera") * Time.deltaTime * verticalRotationSpeed;
+            float horizontalRotationChange = 0;// -Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed;
 
            Vector3 rotation =cameraPivot.rotation.eulerAngles;
 

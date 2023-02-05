@@ -65,12 +65,20 @@ public class SeedMovement : MonoBehaviour
     [SerializeField] bool onGround;
     Vector3[] cardinalVectors = new Vector3[] { Vector3.forward, Vector3.back, Vector3.left, Vector3.right };
 
+
+    [Space(5)]
+    [Header("Bar")]
+    [SerializeField] GameObject BarHolder;
+    onGroundBar barScript;
+
+
     // Start is called before the first frame update
     void Start()
     {
         float terminal = terminalYVelocity;
         rb = GetComponent<Rigidbody>();
-        terminalDelta = terminalYVelocity - spinningterminalYVelocity; 
+        terminalDelta = terminalYVelocity - spinningterminalYVelocity;
+        barScript = BarHolder.GetComponent<onGroundBar>();
     }
 
     private void FixedUpdate()
@@ -198,9 +206,11 @@ public class SeedMovement : MonoBehaviour
         {
             if (Physics.Raycast(corners[i].position, -Vector3.up, groundedRaycastRange))
             {
+                barScript.Grounded();
                 return true;
             }
         }
+        barScript.AirBorn();
         return false;
     }
    
