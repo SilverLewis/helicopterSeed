@@ -18,10 +18,13 @@ public class TreeManager : MonoBehaviour
     int startingTrees;
     [SerializeField] Transform endGameStatsTextHolder;
     [SerializeField] float alphaStep = .01f;
+    [SerializeField] AudioClip win, lose;
+    AudioSource audioRef;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioRef = GetComponent<AudioSource>();
         //stat text starst at 0 alpha;
         ChangeChildrensAlpha(0);
 
@@ -39,7 +42,7 @@ public class TreeManager : MonoBehaviour
         coin.coinCount = 0;
         player.transform.position = GetSpawnPoint();
         player.gameObject.SetActive(true);
-
+        
         loadUI.FadeImage(0, 1);
     }
 
@@ -64,6 +67,8 @@ public class TreeManager : MonoBehaviour
     {
         if (landedOnSoil)
         {
+            audioRef.PlayOneShot(win);
+
             winText.SetActive(true);
             Vector3Int treeSpawn = Vector3Int.RoundToInt(player.transform.position)+Vector3Int.down;
             player.gameObject.SetActive(false);
@@ -76,6 +81,7 @@ public class TreeManager : MonoBehaviour
         }
         else
         {
+            audioRef.PlayOneShot(lose);
             loseText.SetActive(true);
         }
         StartCoroutine(RespawnProcess());
