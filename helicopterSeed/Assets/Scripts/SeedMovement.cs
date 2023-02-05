@@ -146,7 +146,7 @@ public class SeedMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        startFalling = Input.GetKey(KeyCode.Space);
+        startFalling = Input.GetButton("fire");
 
         TickTimers();
 
