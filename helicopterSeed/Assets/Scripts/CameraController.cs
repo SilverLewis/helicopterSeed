@@ -36,6 +36,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetNewForward();
         if (cameraMovementEnabled) {
             float verticalRotationChange =  Input.GetAxis("VerticalCamera") * Time.deltaTime * verticalRotationSpeed;
             float horizontalRotationChange = Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed;
@@ -46,12 +47,6 @@ public class CameraController : MonoBehaviour
             rotation.y += horizontalRotationChange;
 
            cameraPivot.rotation =  Quaternion.Euler(rotation);
-
-            //only calculate new forward on camera rotation change
-            if (verticalRotationChange != 0 || horizontalRotationChange != 0)
-            { 
-                SetNewForward();
-            }
         }
     }
 

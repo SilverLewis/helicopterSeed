@@ -5,6 +5,7 @@ using UnityEngine;
 public class Wind : MonoBehaviour
 {
     [SerializeField] SeedMovement seed;
+    [SerializeField] WindZone windZone;
 
     [SerializeField] Vector3 direction = new Vector3();
     [SerializeField] float strength = 0;
@@ -20,6 +21,9 @@ public class Wind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = seed.gameObject.transform.position; 
+
+        windZone.windMain = strength*2;
         if (!blowing && !switchingDirections) {
             if (wasBlowing)
             {
@@ -57,7 +61,11 @@ public class Wind : MonoBehaviour
         
         //sets new direction and strength
         float strengthGoal = Random.Range(StrengthMinMax.x, StrengthMinMax.y);
-        direction = Vector3.Normalize(new Vector3(Random.Range(0, 1000),0, Random.Range(0, 1000)));
+
+        direction = Vector3.Normalize(new Vector3(Random.Range(-1000, 1000), 0, Random.Range(-1000, 1000)));
+        transform.rotation =  Quaternion.LookRotation(direction,Vector3.up);
+        direction.y = 0;
+
         print("Wind Direction:" + direction);
 
         step = strengthGoal / 100;
