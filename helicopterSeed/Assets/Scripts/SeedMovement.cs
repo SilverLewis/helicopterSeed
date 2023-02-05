@@ -7,6 +7,13 @@ public class SeedMovement : MonoBehaviour
     Rigidbody rb;
     Vector3 currentRotation;
 
+    [SerializeField] public TreeManager manager;
+    [SerializeField] float zMinAxis;
+    [SerializeField] float zMaxAxis;
+    [SerializeField] float xMinAxis;
+    [SerializeField] float xMaxAxis;
+
+
     [Space(5)]
     [Header("Wind")]
     [SerializeField]public Vector3 windDirection = new Vector3();
@@ -80,9 +87,40 @@ public class SeedMovement : MonoBehaviour
         terminalDelta = terminalYVelocity - spinningterminalYVelocity;
         barScript = BarHolder.GetComponent<onGroundBar>();
     }
-   
+
     private void FixedUpdate()
     {
+        if (transform.position.y >manager.getHieght()+50) {
+            transform.position = new Vector3(transform.position.x, manager.getHieght() + 49, transform.position.z);
+        }
+
+        if (transform.position.y < -10)
+        {
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
+
+        
+        if (transform.position.x < xMinAxis)
+        {
+            transform.position = new Vector3(xMinAxis+20, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > xMaxAxis)
+        {
+            transform.position = new Vector3(xMaxAxis-20, transform.position.y, transform.position.z);
+        }
+        if (transform.position.z <zMinAxis)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zMinAxis+20);
+        }
+        if (transform.position.z > zMaxAxis)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zMaxAxis-20);
+        }
+        
+
+
+
+
         bool grounded = IsGrounded();
         if (!onGround && grounded)
         {
