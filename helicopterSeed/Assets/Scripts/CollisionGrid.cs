@@ -79,7 +79,7 @@ public class CollisionGrid : MonoBehaviour
         }
     }
 
-    public bool AddObject(GridObject objectToAdd,Vector3Int? position,bool overwrite=false)
+    public virtual bool AddObject(GridObject objectToAdd,Vector3Int? position,bool overwrite=false)
     {
         bool preExistingObject = ObjectGrid.ContainsKey(position);
         if (preExistingObject)
