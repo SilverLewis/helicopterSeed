@@ -17,6 +17,6 @@ public class UIStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinText.text = coin.coinCount.ToString();
+        coinText.text = coin.coinCount.ToString()+ "Growth Coins";
     }
 }
