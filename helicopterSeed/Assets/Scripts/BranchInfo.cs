@@ -42,7 +42,7 @@ public class BranchInfo : GridObject
         {
             if (treeRef.GetPositionOfObject(this) == null)
             {
-                print("added object to tree");
+                //print("added object to tree");
                 treeRef.AddObject(this, new Vector3Int?(Vector3Int.RoundToInt(transform.position)));
                 treeRef.currentlyViableBranches.Add(this);//assume a new one is viable, the quick check will determine if it is or not
             }

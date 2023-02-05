@@ -63,7 +63,10 @@ public class ScreenFader : MonoBehaviour
         {
             yield return new WaitForSeconds(delay);
         }
-        audioGuy.Play();
+        if (audioGuy)
+        {
+            audioGuy.Play();
+        }
         //fader.CrossFadeAlpha(targetAlpha, timeToFade, false);
         float i = 0;
         float currentAlpha;

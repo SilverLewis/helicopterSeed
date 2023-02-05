@@ -10,6 +10,7 @@ public class TreeManager : MonoBehaviour
     [SerializeField] GameObject player,winText,loseText;
     [SerializeField] onGroundBar barRef;
     [SerializeField] ScreenFader loadUI;
+    [SerializeField] ScreenFader[] bonusFaders;
     [SerializeField] UIStats endText;
     [SerializeField] float minuimStatTime;
     [SerializeField] float StartingHeightOffset =40;
@@ -44,6 +45,10 @@ public class TreeManager : MonoBehaviour
         player.gameObject.SetActive(true);
         
         loadUI.FadeImage(0, 1);
+        foreach(ScreenFader fader in bonusFaders)
+        {
+            fader.FadeImage(0, 1);
+        }
     }
 
     Vector3 GetSpawnPoint() {
@@ -91,7 +96,11 @@ public class TreeManager : MonoBehaviour
     {
         endText.UpdateEndText();
         yield return new WaitForSeconds(1);//time you get to just look at the win / loss on the ground
-        loadUI.FadeImage(1, 0);
+        loadUI.FadeImage(1, 0); 
+        foreach (ScreenFader fader in bonusFaders)
+        {
+            fader.FadeImage(1, 0);
+        }
         yield return new WaitForSeconds(loadUI.timeToFade+loadUI.delay);
         
         loseText.SetActive(false);
@@ -112,7 +121,10 @@ public class TreeManager : MonoBehaviour
         
         StartCoroutine(FadeOut());
         loadUI.FadeImage(0, 1);
-
+        foreach (ScreenFader fader in bonusFaders)
+        {
+            fader.FadeImage(0, 1);
+        }
         cycle++;
         player.GetComponentInChildren<SeedMovement>().enabled = true;
         //the timer would have to not start till the fader ends
