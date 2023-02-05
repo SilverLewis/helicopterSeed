@@ -9,6 +9,7 @@ TagManager:
   - Rock
   - Wood
   - Leaf
+  - coin
   layers:
   - Default
   - TransparentFX
