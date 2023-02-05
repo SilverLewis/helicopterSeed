@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 345fc60cb9acc5a43897061aaefb801c, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -5652,6 +5652,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d257f47214c2ad7489f6b0139617d929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &536437983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 536437985}
+  - component: {fileID: 536437984}
+  m_Layer: 0
+  m_Name: HotKeyBoy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &536437984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536437983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec6b63b555413d429bb977e5254f432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faders:
+  - {fileID: 1282971429}
+  - {fileID: 292736960}
+  - {fileID: 642358804}
+  - {fileID: 1129836392}
+  - {fileID: 1951750934}
+  - {fileID: 514445988}
+  - {fileID: 291082862}
+  - {fileID: 1637086882}
+  - {fileID: 1675167071}
+  - {fileID: 1920624099}
+  - {fileID: 61780239}
+  - {fileID: 2029978105}
+  - {fileID: 1763502639}
+  - {fileID: 1920823088}
+  - {fileID: 2116580261}
+  music: {fileID: 1959903282}
+--- !u!4 &536437985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536437983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 365.5, y: 205.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586991167
 GameObject:
   m_ObjectHideFlags: 0
@@ -6583,7 +6643,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1791665183, guid: befa3b1402fc347468760d06bdb0e641, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1896484628143184439, guid: befa3b1402fc347468760d06bdb0e641, type: 3}
       propertyPath: m_ReceiveShadows
@@ -6639,6 +6699,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: befa3b1402fc347468760d06bdb0e641, type: 3}
+--- !u!82 &1959903282 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1791665183, guid: befa3b1402fc347468760d06bdb0e641, type: 3}
+  m_PrefabInstance: {fileID: 1959903281}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1963955835
 PrefabInstance:
   m_ObjectHideFlags: 0
