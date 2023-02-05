@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 13156191}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 303787253}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 573779263}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 618047975}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -515,15 +515,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288610255
+  m_fontColor: {r: 0.81094515, g: 1, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 770521010}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -768,15 +768,15 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288610255
+  m_fontColor: {r: 0.81094515, g: 1, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -923,15 +923,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288610255
+  m_fontColor: {r: 0.81094515, g: 1, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 899854897}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 901832630}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 970749513}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -1368,15 +1368,15 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288610255
+  m_fontColor: {r: 0.81094515, g: 1, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1400,7 +1400,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1524,7 +1524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 992823929}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 1076392783}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -1716,7 +1716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 1099907099}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 1180766976}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 1193073691}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -2003,15 +2003,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Trees Planted: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288610255
+  m_fontColor: {r: 0.81094515, g: 1, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2035,7 +2035,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2158,15 +2158,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 152.55 m
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288610255
+  m_fontColor: {r: 0.81094515, g: 1, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2313,15 +2313,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Coins Collected:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288610255
+  m_fontColor: {r: 0.81094515, g: 1, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2345,7 +2345,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2675,15 +2675,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Run:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288610255
+  m_fontColor: {r: 0.81094515, g: 1, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2707,7 +2707,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2831,7 +2831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 2034843924}
-  timeToFade: 3
+  timeToFade: 2.1
   delay: 1
   fadeInOnStart: 0
   fadeOutOnStart: 0
@@ -3030,15 +3030,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0 Growth Coins
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281982975
+  m_fontColor: {r: 1, g: 0.8746597, b: 0.2216981, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3162,10 +3162,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: No Soil, No Joy!
+  m_text: No Soil, No Joy!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3491,8 +3491,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You Planted A Tree!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
+  m_sharedMaterial: {fileID: 7057858310182079426, guid: bd311d95d2ec4ab408bc8df8eee6f20e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
