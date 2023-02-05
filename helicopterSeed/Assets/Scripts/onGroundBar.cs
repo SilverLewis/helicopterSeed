@@ -80,7 +80,6 @@ public class onGroundBar : MonoBehaviour
         float startingAlpha = transform.GetChild(0).GetComponent<Image>().color.a;
         for (float alpha = startingAlpha; alpha >= 0; alpha -= alphaStep)
         {
-            print("here!" + alpha);
             ChangeChildrensAlpha(alpha);
             yield return new WaitForSeconds(alphaStep);
         }

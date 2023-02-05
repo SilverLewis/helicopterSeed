@@ -5476,6 +5476,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &501604452 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 501604452, guid: 0024717669346c1449e59b105f78769d, type: 3}
+  m_PrefabInstance: {fileID: 6953955291698440831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &505546529 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3037201491416881349, guid: 0024717669346c1449e59b105f78769d, type: 3}
@@ -5639,6 +5644,9 @@ MonoBehaviour:
   loseText: {fileID: 1124977256}
   barRef: {fileID: 505546530}
   loadUI: {fileID: 1282971429}
+  minuimStatTime: 4
+  endGameStatsTextHolder: {fileID: 501604452}
+  alphaStep: 0.01
 --- !u!1 &852272063
 GameObject:
   m_ObjectHideFlags: 0
@@ -6512,7 +6520,7 @@ MonoBehaviour:
   acceleration: 30
   forwardVector: {x: 0, y: 0, z: 0}
   rotVel: 0
-  rotationAcceleration: 1440
+  rotationAcceleration: 360
   maxRotationSpeed: 1440
   decelerationSpeed: 2880
   righteningSpeed: 30

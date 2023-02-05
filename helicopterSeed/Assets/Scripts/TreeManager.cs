@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TreeManager : MonoBehaviour
 {
@@ -9,9 +10,17 @@ public class TreeManager : MonoBehaviour
     [SerializeField] GameObject player,winText,loseText;
     [SerializeField] onGroundBar barRef;
     [SerializeField] ScreenFader loadUI;
+    [SerializeField] float minuimStatTime ;
+
+    [SerializeField] Transform endGameStatsTextHolder;
+    [SerializeField] float alphaStep = .01f;
+
     // Start is called before the first frame update
     void Start()
     {
+        //stat text starst at 0 alpha;
+        ChangeChildrensAlpha(0);
+
         for (int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).GetComponent<TreeGrid>()) {
@@ -69,18 +78,29 @@ public class TreeManager : MonoBehaviour
     }
     IEnumerator RespawnProcess()
     {
-        yield return new WaitForSeconds(2);//time you get to just look at the win / loss on the ground
+        yield return new WaitForSeconds(1);//time you get to just look at the win / loss on the ground
         loadUI.FadeImage(1, 0);
         yield return new WaitForSeconds(loadUI.timeToFade+loadUI.delay);
+        
+        loseText.SetActive(false);
+        winText.SetActive(false);
+
         player.gameObject.SetActive(false);
-        yield return StartCoroutine(IterateAllTrees());
+        Coroutine iter = StartCoroutine(IterateAllTrees());
+
+        StartCoroutine(FadeIn());
+        yield return new WaitForSeconds(minuimStatTime);
+
+        yield return iter;
+
         coin.coinCount = 0;
         player.transform.position = GetSpawnPoint();
         player.gameObject.SetActive(true);
         barRef.ResetShit();
+        
+        StartCoroutine(FadeOut());
         loadUI.FadeImage(0, 1);
-        loseText.SetActive(false);
-        winText.SetActive(false);
+
         player.GetComponentInChildren<SeedMovement>().enabled = true;
         //the timer would have to not start till the fader ends
 
@@ -98,5 +118,37 @@ public class TreeManager : MonoBehaviour
             //this is where a loading bar would update
         }
     }
-    
+
+    IEnumerator FadeOut()
+    {
+        float startingAlpha = endGameStatsTextHolder.GetChild(0).GetComponent<TextMeshProUGUI>().color.a;
+        for (float alpha = startingAlpha; alpha >= 0; alpha -= alphaStep)
+        {
+            ChangeChildrensAlpha(alpha);
+            yield return new WaitForSeconds(alphaStep);
+        }
+        ChangeChildrensAlpha(0);
+    }
+
+    IEnumerator FadeIn()
+    {
+        float startingAlpha = endGameStatsTextHolder.GetChild(0).GetComponent<TextMeshProUGUI>().color.a;
+        for (float alpha = startingAlpha; alpha < 1; alpha += alphaStep)
+        {
+            ChangeChildrensAlpha(alpha);
+            yield return new WaitForSeconds(alphaStep);
+        }
+        ChangeChildrensAlpha(1);
+    }
+
+    void ChangeChildrensAlpha(float alpha)
+    {
+        for (int i = 0; i < endGameStatsTextHolder.childCount; i++)
+        {
+            Color c = endGameStatsTextHolder.GetChild(i).GetComponent<TextMeshProUGUI>().color;
+            c.a = alpha;
+            endGameStatsTextHolder.GetChild(i).GetComponent<TextMeshProUGUI>().color = c;
+        }
+    }
+
 }

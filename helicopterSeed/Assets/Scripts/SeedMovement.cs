@@ -226,7 +226,6 @@ public class SeedMovement : MonoBehaviour
             for(int j = 0; j < cardinalVectors.Length; j++) { 
                 if (Physics.Raycast(corners[i].position, cardinalVectors[j], groundedRaycastRange*2))
                 {
-                      print("here");
                     return cardinalVectors[j];
                 }
             }
