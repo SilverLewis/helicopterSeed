@@ -104,7 +104,12 @@ public class Wind : MonoBehaviour
         float strengthGoal = Random.Range(StrengthMinMax.x, StrengthMinMax.y);
 
         direction = Vector3.Normalize(new Vector3(Random.Range(-1000, 1000), Mathf.Max(Random.Range(-4000, 1000),0), Random.Range(-1000, 1000)));
-            
+
+        if (direction.y > .5) {
+            direction.y=.3f;
+            direction = Vector3.Normalize(direction);
+        }
+
         transform.rotation =  Quaternion.LookRotation(direction,Vector3.up);
 
         print("Wind Direction:" + direction);
