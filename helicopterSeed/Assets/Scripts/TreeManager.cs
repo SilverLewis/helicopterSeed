@@ -21,6 +21,8 @@ public class TreeManager : MonoBehaviour
 
         player.transform.position = GetSpawnPoint();
         player.gameObject.SetActive(true);
+
+        StartCoroutine(IterateAllTrees());
         loadUI.FadeImage(0, 1);
     }
 
