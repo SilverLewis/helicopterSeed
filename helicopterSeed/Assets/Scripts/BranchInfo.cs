@@ -12,7 +12,7 @@ public class BranchInfo : GridObject
     TreeGrid treeRef;
     public List<Transform> freeGrowPoints= new List<Transform>();
     public float weight=500; //how much to prioritize growing from this branch
-    float upWeight=400, downWeight=-300, sideWeight=-100,heightWeight=300;
+    float upWeight=700, downWeight=-300, sideWeight=-100,heightWeight=400;
     // Start is called before the first frame update
     public override void Initialize()
     {
@@ -35,6 +35,7 @@ public class BranchInfo : GridObject
             {
                 print("added object to tree");
                 treeRef.AddObject(this, new Vector3Int?(Vector3Int.RoundToInt(transform.position)));
+                treeRef.currentlyViableBranches.Add(this);//assume a new one is viable, the quick check will determine if it is or not
             }
         }
     }

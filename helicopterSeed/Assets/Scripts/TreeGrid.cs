@@ -6,14 +6,14 @@ using UnityEngine;
 public class PieceTypes
 {
     [Tooltip("the heigher the number, the more likely it is to pick this type")]
-    public float weight;
+    public float weight,minWeight,maxWeight;
     public GameObject[] prefabs;
     
 }
 public class TreeGrid : CollisionGrid
 {
     [SerializeField] int minGrowthTokens, maxGrowthTokens;
-    List<BranchInfo> currentlyViableBranches = new List<BranchInfo>();
+    public List<BranchInfo> currentlyViableBranches = new List<BranchInfo>();
     public PieceTypes straight, stub, corner, branch2, branch3, branch4, branch5;
     PieceTypes[] allPieceTypes;
     float[] legalRotations = new float[] { 0, 90, 180, 270 };
@@ -53,7 +53,7 @@ public class TreeGrid : CollisionGrid
         }
 
 
-        DetermineCurrentlyViableBranches(); //just doing this again so the weights end up accurate
+        //DetermineCurrentlyViableBranches(); //just doing this again so the weights end up accurate
         if (tokensSpent != tokensToSpend)
         {
             print("had " + (tokensToSpend - tokensSpent) + " tokens remaining");
@@ -98,14 +98,15 @@ public class TreeGrid : CollisionGrid
             }
             else
             {
-                typeChosen.weight -= weightRecencyBias;
+                typeChosen.weight -= weightRecencyBias*5;
             }
+            typeChosen.weight = Mathf.Clamp(typeChosen.weight, typeChosen.minWeight, typeChosen.maxWeight);
         }
         return typeChosen.prefabs[Random.Range(0, typeChosen.prefabs.Length)];
     }
     BranchInfo GetViableSpot()
     {
-        DetermineCurrentlyViableBranches();
+        DetermineCurrentlyViableBranchesFast();
         if (currentlyViableBranches.Count > 0)
         {
             //get weighted branch, prioritized by height and upwards ness 
@@ -160,5 +161,33 @@ public class TreeGrid : CollisionGrid
                 }
             }
         }
+    }
+    /// <summary>
+    /// assumes you already have a collection of all the previously viable ones
+    /// </summary>
+    void DetermineCurrentlyViableBranchesFast()
+    {
+        List<BranchInfo> removeThese = new List<BranchInfo>();
+        foreach (BranchInfo eachBranchPiece in currentlyViableBranches)
+        {
+            eachBranchPiece.DetermineFreeGrowPoints();
+            if (eachBranchPiece.freeGrowPoints.Count > 0)
+            {
+               //stays on there
+            }
+            else
+            {
+                removeThese.Add(eachBranchPiece);
+            }
+        }
+        foreach(BranchInfo eachBranchPiece in removeThese)
+        {
+            currentlyViableBranches.Remove(eachBranchPiece);
+        }
+    }
+
+    public override bool AddObject(GridObject objectToAdd, Vector3Int? position, bool overwrite = false)
+    {
+        return base.AddObject(objectToAdd, position, overwrite);
     }
 }

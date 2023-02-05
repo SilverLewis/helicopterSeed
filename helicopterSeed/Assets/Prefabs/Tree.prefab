@@ -47,39 +47,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singleton: 0
   floorReference: {fileID: 1869310558495784975}
-  minGrowthTokens: 1
-  maxGrowthTokens: 60
+  minGrowthTokens: 100
+  maxGrowthTokens: 1000
+  currentlyViableBranches: []
   straight:
-    weight: 300
+    weight: 8000
+    minWeight: 300
+    maxWeight: 15000
     prefabs:
     - {fileID: 7525471855262478426, guid: 287a40764f16da64f9062d3492dc9a57, type: 3}
     - {fileID: 2938963110704733473, guid: c4950e8a31b9dcb4985717b632d83291, type: 3}
     - {fileID: 986342932838092893, guid: c54e337590d96e44bb9df35acaf8536f, type: 3}
   stub:
     weight: 5
+    minWeight: 1
+    maxWeight: 100
     prefabs:
     - {fileID: 8066431582763735965, guid: 9d526f9a9c147ba4db6d09785b02fa1f, type: 3}
   corner:
     weight: 100
+    minWeight: 100
+    maxWeight: 1000
     prefabs:
     - {fileID: 5107874096621576246, guid: cd5d8c520e7b47149969a53ee5caeac7, type: 3}
   branch2:
-    weight: 13
+    weight: 300
+    minWeight: 15
+    maxWeight: 3000
     prefabs:
     - {fileID: 43734440612225376, guid: 190041f3d77ee6b4abb6717613331e50, type: 3}
     - {fileID: 5599381292883926477, guid: 7737f555d1e8af14a975c69458b90456, type: 3}
     - {fileID: 43734440612225376, guid: 3c83719472fd55a48b69dfe2becf6caf, type: 3}
   branch3:
-    weight: 11
+    weight: 60
+    minWeight: 5
+    maxWeight: 2000
     prefabs:
     - {fileID: 2691966957682315125, guid: f19699fd7a621d44b89e3c4e562f2882, type: 3}
     - {fileID: 3162607045885728704, guid: f240a4ec7a71b794393070f91ceec67c, type: 3}
   branch4:
-    weight: 10
+    weight: 30
+    minWeight: 5
+    maxWeight: 1000
     prefabs:
     - {fileID: 2241003180530047331, guid: 91c2787c5a9f07840a63e417cd9c6154, type: 3}
   branch5:
     weight: 5
+    minWeight: 1
+    maxWeight: 750
     prefabs:
     - {fileID: 7509115237170186517, guid: 6325cfff18dda0344befe4cb70d1d48a, type: 3}
 --- !u!1001 &6116463245842568650
