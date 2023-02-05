@@ -14,10 +14,23 @@ public class Wind : MonoBehaviour
     [SerializeField] Vector2 changeTimeMinMax = new Vector2(.5f,5);
     [SerializeField] Vector2 blowingtimeMinMax = new Vector2(5,20);
 
+    [SerializeField] AudioSource windSound;
+    [SerializeField] Vector2 windVolumeMinMax = new Vector2(.05f, .3f);
+    [SerializeField] Vector2 windPitchMinMax = new Vector2(.7f, 1.3f);
+    [SerializeField] float windPanDelta = -.7f;
+
+    float soundDelta;
+    float pitchDelta;
+
     bool switchingDirections;
     bool blowing;
     bool wasBlowing = true;
 
+    private void Start()
+    {
+        soundDelta = windVolumeMinMax.y - windVolumeMinMax.x;
+        pitchDelta = windPitchMinMax.y - windPitchMinMax.x;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -36,6 +49,25 @@ public class Wind : MonoBehaviour
         }
         seed.windDirection = direction;
         seed.windPower = strength;
+
+        float soundPrecent = strength / StrengthMinMax.y;
+        windSound.volume = windVolumeMinMax.x + soundDelta * soundPrecent;
+        windSound.pitch = windPitchMinMax.x + pitchDelta * soundPrecent;
+        windSound.panStereo = 0 + windPanDelta * getOffsetPercent();
+        print(windSound.pitch);
+
+    }
+
+    float getOffsetPercent() {
+        Vector2 forward = new Vector2(seed.forwardVector.x,seed.forwardVector.z).normalized;
+        Vector2 wind = new Vector2(direction.x,direction.z).normalized;
+        float sign = Mathf.Sign(Vector2.Dot(forward, wind));
+        float percent =1- (Vector2.Angle(forward, wind) / 180);
+
+        print("here: "+ sign + ":"+percent);
+        //forward vs win
+
+        return sign*percent;
     }
 
     IEnumerator Blowing()
