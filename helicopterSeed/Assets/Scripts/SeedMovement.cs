@@ -8,14 +8,11 @@ public class SeedMovement : MonoBehaviour
     Vector3 currentRotation;
 
     [Space(5)]
-    [Header("Drag")]
-    [SerializeField] float verticalDrag = 5;
-    [SerializeField] float horizontalDrag = 5;
+    [Header("Wind")]
+    [SerializeField]public Vector3 windDirection = new Vector3();
+    [SerializeField]public float windPower = 0;
 
     [SerializeField] Vector3 internalVelocity = new Vector3();
-    [SerializeField] Vector3 externalVelocity = new Vector3();
-    [SerializeField] Vector3 windVelocity= new Vector3();
-    [SerializeField] Vector3 gravityVelocity = new Vector3();
 
     [Space(5)]
     [Header("Horizontal Movement")]
@@ -40,8 +37,6 @@ public class SeedMovement : MonoBehaviour
     [Space(5)]
     [Header("Vertical Speed")]
     [SerializeField] float gravity =-10;
-    [SerializeField] float fallRateMin = -1;
-    [SerializeField] float fallRate = 0;
     [SerializeField] float spinningterminalYVelocity = 5;
     [SerializeField] float terminalYVelocity = 10;
     float terminal = 10;
@@ -128,6 +123,9 @@ public class SeedMovement : MonoBehaviour
         //add gravity
         rb.AddForce(Vector3.up* gravity, ForceMode.Force);
         rb.velocity = new Vector3(rb.velocity.x, Mathf.Max(rb.velocity.y, terminal), rb.velocity.z);
+
+        //add wind
+        rb.AddForce(windDirection*windPower, ForceMode.Force);
 
         //add internal
         rb.AddForce(internalVelocity, ForceMode.Force);

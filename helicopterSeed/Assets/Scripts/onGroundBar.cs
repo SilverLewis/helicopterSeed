@@ -35,13 +35,9 @@ public class onGroundBar : MonoBehaviour
 
         if (MaxTimeToDeath == TimeToDeath)
         {
-            print("full health");
-
             fadeOutCounter += Time.deltaTime;
-            print((fadeOutCounter > fadeOutDelay) + ":" + (!fadingOut) + ":" + (transform.GetChild(0).GetComponent<Image>().color.a > 0));
             if (fadeOutCounter > fadeOutDelay && !fadingOut && transform.GetChild(0).GetComponent<Image>().color.a > 0)
             {
-                print("fading out");
                 StartCoroutine(FadeOut());
             }
         }
