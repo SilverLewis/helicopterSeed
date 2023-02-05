@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8022779213452598314}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5342317802151828834}
   m_Layer: 0
   m_Name: corner
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

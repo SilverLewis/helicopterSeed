@@ -6465,6 +6465,8 @@ GameObject:
   - component: {fileID: 6927536583032159078}
   - component: {fileID: 6927536583032159097}
   - component: {fileID: 6927536583032159077}
+  - component: {fileID: 6927536583032159081}
+  - component: {fileID: 6927536583032159080}
   m_Layer: 0
   m_Name: SeedPivot
   m_TagString: Player
@@ -6516,6 +6518,121 @@ Transform:
   m_Father: {fileID: 6927536584119931624}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6927536583032159080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927536583032159076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3593bfeb954bf4282871511624a054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wood: {fileID: 8300000, guid: ef750129e30a98946b20c8956956712d, type: 3}
+  rock: {fileID: 8300000, guid: 0fbe545544a7dcf4d8daf6324d7097d0, type: 3}
+  grass: {fileID: 8300000, guid: 4f9dea16dfbccb041b44a2d2b80e5302, type: 3}
+  water: {fileID: 8300000, guid: b36e0bc7b0b81534fbae3c72034c53d6, type: 3}
+  leaf: {fileID: 8300000, guid: e5db8d8b90b2d6e489dfcb2a55f91eb9, type: 3}
+  pitchVar: 0.3
+  volumeVar: 0.3
+--- !u!82 &6927536583032159081
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927536583032159076}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &6927536583032159097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6530,6 +6647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windDirection: {x: 0, y: 0, z: 0}
   windPower: 0
+  windYPowerMultiplier: 15
   internalVelocity: {x: 0, y: 0, z: 0}
   internalMax: 10
   acceleration: 30

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1811574390374323959}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: Leaf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

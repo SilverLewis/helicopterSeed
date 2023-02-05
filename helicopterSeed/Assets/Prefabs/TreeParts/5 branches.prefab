@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4720282412267222281}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 7274673855217382465}
   m_Layer: 0
   m_Name: 5 branches
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

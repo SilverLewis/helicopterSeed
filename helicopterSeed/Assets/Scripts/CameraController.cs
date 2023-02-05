@@ -17,9 +17,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] float cameraMaxVerticalDegrees = 75;
     [SerializeField] float cameraMinVerticalDegrees = 15;
 
-
-
-
+    
 
     // Start is called before the first frame update
     void Start()
