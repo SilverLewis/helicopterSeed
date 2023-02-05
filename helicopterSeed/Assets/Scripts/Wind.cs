@@ -54,16 +54,19 @@ public class Wind : MonoBehaviour
         float soundPrecent = strength / StrengthMinMax.y;
         windSound.volume = windVolumeMinMax.x + soundDelta * soundPrecent;
         windSound.pitch = windPitchMinMax.x + pitchDelta * soundPrecent;
-        windSound.panStereo = 0 + windPanDelta * getOffsetPercent();
+        windSound.panStereo = 0 + windPanDelta * GetOffsetPercent();
     }
 
-    float getOffsetPercent() {
-        Vector2 forward = new Vector2(seed.forwardVector.x,seed.forwardVector.z).normalized;
+    float GetOffsetPercent() {
+        Vector3 rotated = Quaternion.Euler(0, -45, 0) * seed.forwardVector;
+
+        Vector2 forward =  new Vector2(rotated.x,rotated.z).normalized;
         Vector2 wind = new Vector2(direction.x,direction.z).normalized;
-        float sign = Mathf.Sign(Vector2.Dot(forward, wind));
-        float percent =1- (Vector2.Angle(forward, wind) / 180);
+        Vector2 backwardsWind = new Vector2(direction.x, direction.z).normalized;
+        
+        float percent = ((Vector2.Angle(forward, wind)-90) / 90);
      
-        return sign*percent;
+        return percent;
     }
 
     IEnumerator Blowing()
