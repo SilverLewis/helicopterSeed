@@ -18,11 +18,12 @@ public class TreeManager : MonoBehaviour
                 trees.Add(transform.GetChild(i).GetComponent<TreeGrid>());
             }
         }
-
+        coin.coinCount = 20;
+        StartCoroutine(IterateAllTrees());
+        coin.coinCount = 0;
         player.transform.position = GetSpawnPoint();
         player.gameObject.SetActive(true);
 
-        StartCoroutine(IterateAllTrees());
         loadUI.FadeImage(0, 1);
     }
 
@@ -73,6 +74,7 @@ public class TreeManager : MonoBehaviour
         yield return new WaitForSeconds(loadUI.timeToFade+loadUI.delay);
         player.gameObject.SetActive(false);
         yield return StartCoroutine(IterateAllTrees());
+        coin.coinCount = 0;
         player.transform.position = GetSpawnPoint();
         player.gameObject.SetActive(true);
         barRef.ResetShit();

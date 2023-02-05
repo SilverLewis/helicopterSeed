@@ -48,8 +48,7 @@ MonoBehaviour:
   singleton: 0
   floorReference: {fileID: 1869310558495784975}
   highestPosition: {x: 0, y: 0, z: 0}
-  minGrowthTokens: 100
-  maxGrowthTokens: 1000
+  growthTokensPerCoin: 20
   currentlyViableBranches: []
   straight:
     weight: 8000
@@ -101,6 +100,9 @@ MonoBehaviour:
   leafPrefabs:
   - {fileID: 5079157486231090323, guid: b958e33453cdab44e8089b38fd9069f6, type: 3}
   - {fileID: 1577782275271682904, guid: 1524d9994229a744d9ffe255389e4508, type: 3}
+  - {fileID: 5079157486231090323, guid: 6a6dfd0450366724fb74e61fdd22dcc2, type: 3}
+  - {fileID: 1577782275271682904, guid: 1524d9994229a744d9ffe255389e4508, type: 3}
+  - {fileID: 5079157486231090323, guid: b958e33453cdab44e8089b38fd9069f6, type: 3}
   weightRecencyBias: 30
 --- !u!1 &5663618114295658824
 GameObject:

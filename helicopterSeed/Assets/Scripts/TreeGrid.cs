@@ -14,7 +14,7 @@ public class TreeGrid : CollisionGrid
 {
     public Vector3 highestPosition = new Vector3();
 
-    [SerializeField] int minGrowthTokens, maxGrowthTokens;
+    [SerializeField] int growthTokensPerCoin;
     public List<BranchInfo> currentlyViableBranches = new List<BranchInfo>();
     public PieceTypes straight, stub, corner, branch2, branch3, branch4, branch5;
     public GameObject[] leafPrefabs;
@@ -37,7 +37,7 @@ public class TreeGrid : CollisionGrid
     }
     public void YearlyIteration()
     {
-        int tokensToSpend = Random.Range(minGrowthTokens, maxGrowthTokens);// this can be replaced with a method if we ever make it more variable than that
+        int tokensToSpend = 1 * growthTokensPerCoin + coin.coinCount * growthTokensPerCoin;
         int tokensSpent = 0;
         for (tokensSpent = 0; tokensSpent < tokensToSpend; tokensSpent++)
         {
