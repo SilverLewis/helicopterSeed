@@ -5644,7 +5644,9 @@ MonoBehaviour:
   loseText: {fileID: 1124977256}
   barRef: {fileID: 505546530}
   loadUI: {fileID: 1282971429}
+  endText: {fileID: 6953955291698440832}
   minuimStatTime: 4
+  StartingHeightOffset: 40
   endGameStatsTextHolder: {fileID: 501604452}
   alphaStep: 0.01
 --- !u!1 &852272063
@@ -6523,6 +6525,7 @@ MonoBehaviour:
   rotationAcceleration: 360
   maxRotationSpeed: 1440
   decelerationSpeed: 2880
+  startFalling: 0
   righteningSpeed: 30
   gravity: -10
   spinningterminalYVelocity: 100
@@ -7063,6 +7066,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1188645504967764535, guid: 0024717669346c1449e59b105f78769d, type: 3}
+      propertyPath: treeManager
+      value: 
+      objectReference: {fileID: 821130208}
     - target: {fileID: 6953955292117542612, guid: 0024717669346c1449e59b105f78769d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7153,3 +7160,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0024717669346c1449e59b105f78769d, type: 3}
+--- !u!114 &6953955291698440832 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1188645504967764535, guid: 0024717669346c1449e59b105f78769d, type: 3}
+  m_PrefabInstance: {fileID: 6953955291698440831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6efe27bd90c6b894a83edc70279340bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
