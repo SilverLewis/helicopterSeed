@@ -13,6 +13,7 @@ public class Wind : MonoBehaviour
     [SerializeField] Vector2 StrengthMinMax = new Vector2(.5f, 5);
     [SerializeField] Vector2 changeTimeMinMax = new Vector2(.5f,5);
     [SerializeField] Vector2 blowingtimeMinMax = new Vector2(5,20);
+    [SerializeField] Vector2 updraftBlowingtimeMinMax = new Vector2(3, 5);
 
     [SerializeField] AudioSource windSound;
     [SerializeField] Vector2 windVolumeMinMax = new Vector2(.05f, .3f);
@@ -63,17 +64,24 @@ public class Wind : MonoBehaviour
         Vector2 wind = new Vector2(direction.x,direction.z).normalized;
         float sign = Mathf.Sign(Vector2.Dot(forward, wind));
         float percent =1- (Vector2.Angle(forward, wind) / 180);
-
-        print("here: "+ sign + ":"+percent);
-        //forward vs win
-
+     
         return sign*percent;
     }
 
     IEnumerator Blowing()
     {
         blowing = true;
-        yield return new WaitForSeconds(Random.Range(blowingtimeMinMax.x, blowingtimeMinMax.y));
+
+        float length = 0; 
+        if (direction.y > .5)
+        {
+            length = Random.Range(updraftBlowingtimeMinMax.x, updraftBlowingtimeMinMax.y);
+        }
+        else
+        {
+            length = Random.Range(blowingtimeMinMax.x, blowingtimeMinMax.y);
+        }
+        yield return new WaitForSeconds(length);
         blowing = false;
 
     }
