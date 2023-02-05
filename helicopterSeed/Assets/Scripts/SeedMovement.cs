@@ -154,8 +154,8 @@ public class SeedMovement : MonoBehaviour
 
         TickTimers();
 
-        float forward = Input.GetAxis("Vertical") ;
-        float horizontal = Input.GetAxis("Horizontal") ;
+        float forward = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
         
         var rightVector = new Vector3(forwardVector.z, 0, -forwardVector.x);
 
@@ -218,10 +218,15 @@ public class SeedMovement : MonoBehaviour
     {
         for (int i =0;i<corners.Length;i++)
         {
-            if (Physics.Raycast(corners[i].position, -Vector3.up, groundedRaycastRange))
+            RaycastHit hit;
+            if (Physics.Raycast(corners[i].position, -Vector3.up, out hit, groundedRaycastRange))
             {
                 barScript.Grounded();
-                return true;
+                if (!hit.collider.gameObject.CompareTag("coin"))
+                {
+                    print(hit.collider.gameObject.tag);
+                    return true;
+                }
             }
         }
         barScript.AirBorn();
@@ -232,10 +237,16 @@ public class SeedMovement : MonoBehaviour
 
         for (int i = 0; i < corners.Length; i++)
         {
-            for(int j = 0; j < cardinalVectors.Length; j++) { 
-                if (Physics.Raycast(corners[i].position, cardinalVectors[j], groundedRaycastRange*2))
+            for(int j = 0; j < cardinalVectors.Length; j++) {
+
+                RaycastHit hit;
+                if (Physics.Raycast(corners[i].position, cardinalVectors[j], out hit, groundedRaycastRange * 2))
                 {
-                    return cardinalVectors[j];
+                    if (!hit.collider.gameObject.CompareTag("coin"))
+                    {
+                        print(hit.collider.gameObject.tag);
+                        return cardinalVectors[j];
+                    }
                 }
             }
         }
