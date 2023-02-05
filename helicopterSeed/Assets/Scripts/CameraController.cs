@@ -42,10 +42,19 @@ public class CameraController : MonoBehaviour
         }
 
         float vert = Input.GetAxis("VerticalCamera");
-        print(vert);
+        if (vert == 0) {
+            vert = Input.GetAxis("VerticalCamera2");
+        }
+
+        float hor = Input.GetAxis("HorizontalCamera");
+        if (hor == 0)
+        {
+            hor = Input.GetAxis("HorizontalCamera2");
+        }
+
 
         float verticalRotationChange = vert*invertCamera * Time.deltaTime * verticalRotationSpeed;
-        float horizontalRotationChange =  Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed * invertCamera;
+        float horizontalRotationChange =  hor * Time.deltaTime * horizontalRotationSpeed * invertCamera;
 
         Vector3 rotation =cameraPivot.rotation.eulerAngles;
 

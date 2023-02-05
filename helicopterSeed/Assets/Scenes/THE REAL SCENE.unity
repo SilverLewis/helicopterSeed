@@ -6854,7 +6854,7 @@ MonoBehaviour:
   acceleration: 30
   forwardVector: {x: 0, y: 0, z: 0}
   rotVel: 0
-  rotationAcceleration: 360
+  rotationAcceleration: 480
   maxRotationSpeed: 1440
   decelerationSpeed: 2880
   startFalling: 0
