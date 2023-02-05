@@ -11,7 +11,9 @@ public class TreeManager : MonoBehaviour
     [SerializeField] onGroundBar barRef;
     [SerializeField] ScreenFader loadUI;
     [SerializeField] float minuimStatTime ;
-
+    int cycle = 1;
+    float heighestEver;
+    int startingTrees;
     [SerializeField] Transform endGameStatsTextHolder;
     [SerializeField] float alphaStep = .01f;
 
@@ -27,6 +29,9 @@ public class TreeManager : MonoBehaviour
                 trees.Add(transform.GetChild(i).GetComponent<TreeGrid>());
             }
         }
+
+        startingTrees = trees.Count;
+
         coin.coinCount = 20;
         StartCoroutine(IterateAllTrees());
         coin.coinCount = 0;
@@ -45,15 +50,13 @@ public class TreeManager : MonoBehaviour
             }
         }
         print(highest);
+        heighestEver = highest.y + 20;
         return highest+Vector3.up*20;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.U)) {
-            print(GetSpawnPoint());
-        }
     }
     public void OnPlayerLanded(bool landedOnSoil)
     {
@@ -101,6 +104,7 @@ public class TreeManager : MonoBehaviour
         StartCoroutine(FadeOut());
         loadUI.FadeImage(0, 1);
 
+        cycle++;
         player.GetComponentInChildren<SeedMovement>().enabled = true;
         //the timer would have to not start till the fader ends
 
@@ -151,4 +155,17 @@ public class TreeManager : MonoBehaviour
         }
     }
 
+    public int getTreeCount() {
+        return trees.Count-startingTrees;
+    }
+
+    public int getCycleCount()
+    {
+        return cycle;
+    }
+
+    public float getHieght()
+    {
+        return heighestEver;
+    }
 }

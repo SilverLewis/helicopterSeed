@@ -6,7 +6,8 @@ using TMPro;
 
 public class UIStats : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI coinText, tallestTreeText, treeCountText, cylceCountText;
+    [SerializeField] TextMeshProUGUI coinText, tallestTreeText, treeCountText, cycleCountText, coinsCollected;
+    [SerializeField] TreeManager treeManager;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,14 @@ public class UIStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinText.text = coin.coinCount.ToString()+ "Growth Coins";
+        coinText.text = coin.coinCount.ToString()+ " Growth Coins";
+
+        //UI text
+        treeCountText.text = treeManager.getTreeCount().ToString();
+        cycleCountText.text = treeManager.getCycleCount().ToString();
+        tallestTreeText.text = (1.3*treeManager.getHieght()).ToString()+"m";
+        coinsCollected.text = coin.coinCount.ToString() + " Growth Coins";
+        print(tallestTreeText.text);
+
     }
 }
