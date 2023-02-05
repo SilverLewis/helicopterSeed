@@ -1406,9 +1406,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 6953955292301835691}
-  tallestTreeText: {fileID: 0}
-  treeCountText: {fileID: 0}
-  cylceCountText: {fileID: 0}
+  tallestTreeText: {fileID: 1517224858}
+  treeCountText: {fileID: 763878986}
+  cycleCountText: {fileID: 809856052}
+  coinsCollected: {fileID: 979060714}
+  treeManager: {fileID: 0}
 --- !u!1 &6953955292301835693
 GameObject:
   m_ObjectHideFlags: 0
