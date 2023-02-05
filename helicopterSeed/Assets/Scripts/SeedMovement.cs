@@ -149,8 +149,14 @@ public class SeedMovement : MonoBehaviour
 
         if (!onGround)
         {
-            //float currentSpinRatio = rotVel / maxRotationSpeed;
-            internalVelocity = Vector3.ClampMagnitude( internalVelocity + movementVector * acceleration * Time.deltaTime, internalMax);
+            if (forward != 0 || horizontal != 0)
+            {
+                //float currentSpinRatio = rotVel / maxRotationSpeed;
+                internalVelocity = Vector3.ClampMagnitude(internalVelocity + movementVector * acceleration * Time.deltaTime, internalMax);
+            }
+            else {
+                internalVelocity = Vector3.ClampMagnitude(internalVelocity - internalVelocity * acceleration * Time.deltaTime, internalMax);
+            }
         }
         else if(rotVel<=0 && Vector3.Magnitude(movementVector)>0 && CanJump()) {
             Jump(movementVector);
