@@ -17,9 +17,10 @@ public class TreeGrid : CollisionGrid
     [SerializeField] int minGrowthTokens, maxGrowthTokens;
     public List<BranchInfo> currentlyViableBranches = new List<BranchInfo>();
     public PieceTypes straight, stub, corner, branch2, branch3, branch4, branch5;
+    public GameObject[] leafPrefabs;
     PieceTypes[] allPieceTypes;
     float[] legalRotations = new float[] { 0, 90, 180, 270 };
-    float weightRecencyBias=30;
+    public float weightRecencyBias=30;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +77,7 @@ public class TreeGrid : CollisionGrid
         newPiece.transform.Rotate(spawnConnectionPoint.up, legalRotations[Random.Range(0, legalRotations.Length)],Space.Self);
         newPiece.transform.up = spawnConnectionPoint.up;
         newPiece.GetComponent<BranchInfo>().Initialize();//so you dont have to wait for it's start, adds it to the gridses
+        
     }
 
     GameObject PickBranchType()
@@ -196,5 +198,19 @@ public class TreeGrid : CollisionGrid
     public override bool AddObject(GridObject objectToAdd, Vector3Int? position, bool overwrite = false)
     {
         return base.AddObject(objectToAdd, position, overwrite);
+    }
+
+    void CombineMeshes()
+    {
+        CombineInstance[] combine = new CombineInstance[ObjectGrid.Values.Count];
+        List<GridObject> allThem = new List<GridObject>(ObjectGrid.Values);
+        for(int i=0; i<=ObjectGrid.Values.Count;i++)
+        {
+            combine[i].mesh = allThem[i].GetComponentInChildren<MeshFilter>().mesh;
+            combine[i].transform = allThem[i].GetComponentInChildren<MeshFilter>().transform.localToWorldMatrix;
+            allThem[i].GetComponentInChildren<MeshFilter>().gameObject.SetActive(false);
+        }
+        transform.GetComponent<MeshFilter>().mesh = new Mesh();
+        transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
     }
 }

@@ -98,6 +98,10 @@ MonoBehaviour:
     maxWeight: 750
     prefabs:
     - {fileID: 7509115237170186517, guid: 6325cfff18dda0344befe4cb70d1d48a, type: 3}
+  leafPrefabs:
+  - {fileID: 5079157486231090323, guid: b958e33453cdab44e8089b38fd9069f6, type: 3}
+  - {fileID: 1577782275271682904, guid: 1524d9994229a744d9ffe255389e4508, type: 3}
+  weightRecencyBias: 30
 --- !u!1 &5663618114295658824
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +192,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869310558737049775}
     m_Modifications:
+    - target: {fileID: 7147442511853840065, guid: 9d526f9a9c147ba4db6d09785b02fa1f, type: 3}
+      propertyPath: leafPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7258228536709710119, guid: 9d526f9a9c147ba4db6d09785b02fa1f, type: 3}
       propertyPath: m_RootOrder
       value: 0

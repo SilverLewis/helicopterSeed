@@ -13,6 +13,7 @@ public class BranchInfo : GridObject
     public List<Transform> freeGrowPoints= new List<Transform>();
     public float weight=500; //how much to prioritize growing from this branch
     float upWeight=700, downWeight=-300, sideWeight=-100,heightWeight=400;
+    float leafChance = .05f;
     // Start is called before the first frame update
     public override void Initialize()
     {
@@ -22,6 +23,14 @@ public class BranchInfo : GridObject
             if (treeRef == null)
             {
                 print("this piece isnt in a tree!");
+            }
+            else
+            {
+                //attempt leaves
+                if (leafPoints.Length > 0 && Random.value <= leafChance)
+                {
+                    SpawnLeaves();
+                }
             }
         }
         base.Initialize();
@@ -104,5 +113,13 @@ public class BranchInfo : GridObject
     {
         Transform chosenGrowPoint = freeGrowPoints[Random.Range(0, freeGrowPoints.Count)];
         return chosenGrowPoint;
+    }
+
+    void SpawnLeaves()
+    {
+        Transform spawn = leafPoints[Random.Range(0, leafPoints.Length)];
+        GameObject newLeaf = Instantiate(treeRef.leafPrefabs[Random.Range(0, treeRef.leafPrefabs.Length)], spawn.position, spawn.rotation, transform);
+        newLeaf.transform.Rotate(spawn.up, Random.Range(0,360), Space.Self);
+        newLeaf.transform.up = spawn.up;
     }
 }
