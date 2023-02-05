@@ -11,6 +11,7 @@ public class SeedMovement : MonoBehaviour
     [Header("Wind")]
     [SerializeField]public Vector3 windDirection = new Vector3();
     [SerializeField]public float windPower = 0;
+    [SerializeField]public float windYPowerMultiplier = 15;
 
     [SerializeField] Vector3 internalVelocity = new Vector3();
 
@@ -129,6 +130,9 @@ public class SeedMovement : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, Mathf.Max(rb.velocity.y, terminal), rb.velocity.z);
 
         //add wind
+        float currentSpinRatio = rotVel / maxRotationSpeed;
+        float halfYMulti = windYPowerMultiplier / 2;
+        windDirection.y*= halfYMulti + halfYMulti* currentSpinRatio;
         rb.AddForce(windDirection*windPower, ForceMode.Force);
 
         //add internal
