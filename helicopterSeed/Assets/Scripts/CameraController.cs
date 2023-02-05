@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         cameraPivot = transform.transform;
+        SetNewForward();
     }
 
     private void FixedUpdate()
@@ -36,8 +37,8 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         if (cameraMovementEnabled) { 
-            float verticalRotationChange = Input.GetAxis("Vertical") * Time.deltaTime * verticalRotationSpeed;
-            float horizontalRotationChange = -Input.GetAxis("Horizontal") * Time.deltaTime * horizontalRotationSpeed;
+            float verticalRotationChange = Input.GetAxis("VerticalCamera") * Time.deltaTime * verticalRotationSpeed;
+            float horizontalRotationChange = -Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed;
 
            Vector3 rotation =cameraPivot.rotation.eulerAngles;
 
@@ -45,6 +46,20 @@ public class CameraController : MonoBehaviour
             rotation.y += horizontalRotationChange;
 
            cameraPivot.rotation =  Quaternion.Euler(rotation);
+
+            //only calculate new forward on camera rotation change
+            if (verticalRotationChange != 0 || horizontalRotationChange != 0)
+            { 
+                SetNewForward();
+            }
         }
     }
+
+    void SetNewForward()
+    {
+        Vector3 newForward = seedPivot.transform.position-transform.GetChild(0).position;
+        newForward.y = 0;
+        seedPivot.GetComponent<SeedMovement>().forwardVector =Vector3.Normalize(newForward);
+    }
+
 }
