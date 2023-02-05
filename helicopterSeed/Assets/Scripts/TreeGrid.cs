@@ -12,6 +12,8 @@ public class PieceTypes
 }
 public class TreeGrid : CollisionGrid
 {
+    public Vector3 highestPosition = new Vector3();
+
     [SerializeField] int minGrowthTokens, maxGrowthTokens;
     public List<BranchInfo> currentlyViableBranches = new List<BranchInfo>();
     public PieceTypes straight, stub, corner, branch2, branch3, branch4, branch5;
@@ -64,6 +66,11 @@ public class TreeGrid : CollisionGrid
     {
         Transform spawnConnectionPoint = placeToSpawnFrom.RandomGrowPoint();
         Vector3 spawnPosition = placeToSpawnFrom.transform.position + spawnConnectionPoint.up*2;
+
+        if (spawnPosition.y >= highestPosition.y) {
+            highestPosition = spawnPosition;
+        }
+
         GameObject newPiece = Instantiate(prefab, spawnPosition, spawnConnectionPoint.rotation, transform);
         //randomly rotate along the axis it's growing off of
         newPiece.transform.Rotate(spawnConnectionPoint.up, legalRotations[Random.Range(0, legalRotations.Length)],Space.Self);
