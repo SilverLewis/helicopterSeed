@@ -20,12 +20,14 @@ public class UIStats : MonoBehaviour
     {
         coinText.text = coin.coinCount.ToString()+ " Growth Coins";
 
+
+    }
+
+    public void UpdateEndText() {
         //UI text
         treeCountText.text = treeManager.getTreeCount().ToString();
         cycleCountText.text = treeManager.getCycleCount().ToString();
-        tallestTreeText.text = (1.3*treeManager.getHieght()).ToString()+"m";
+        tallestTreeText.text = (1.3 * treeManager.getHieght()).ToString("n2") + "m";
         coinsCollected.text = coin.coinCount.ToString() + " Growth Coins";
-        print(tallestTreeText.text);
-
     }
 }

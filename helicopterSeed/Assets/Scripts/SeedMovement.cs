@@ -28,6 +28,7 @@ public class SeedMovement : MonoBehaviour
     [SerializeField] float rotationAcceleration = 480;
     [SerializeField] float maxRotationSpeed = 1440;
     [SerializeField] float decelerationSpeed = 2880;
+    [SerializeField] bool startFalling = false;
 
     [Space(5)]
     [Header("Rightening Values")]
@@ -39,6 +40,7 @@ public class SeedMovement : MonoBehaviour
     [SerializeField] float gravity =-10;
     [SerializeField] float spinningterminalYVelocity = 5;
     [SerializeField] float terminalYVelocity = 10;
+
     float terminal = 10;
     float terminalDelta = 0;
 
@@ -48,6 +50,7 @@ public class SeedMovement : MonoBehaviour
     [SerializeField] float rotationTimerDelaySeconds = 1;
     [SerializeField] float jumpTimerDelaySeconds = 1;
     [SerializeField] float rightenTimerDelaySeconds = .5f;
+
     [Space(5)]
     [SerializeField] float currentRotationTimerDelaySeconds = 0;
     [SerializeField] float currentJumpTimerDelaySeconds = 0;
@@ -143,6 +146,8 @@ public class SeedMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        startFalling = Input.GetKey(KeyCode.Space);
+
         TickTimers();
 
         float forward = Input.GetAxis("Vertical") ;
@@ -158,8 +163,8 @@ public class SeedMovement : MonoBehaviour
         {
             if (forward != 0 || horizontal != 0)
             {
-                //float currentSpinRatio = rotVel / maxRotationSpeed;
-                internalVelocity = Vector3.ClampMagnitude(internalVelocity + movementVector * acceleration * Time.deltaTime, internalMax);
+                float currentSpinRatio = rotVel / maxRotationSpeed;
+                internalVelocity = Vector3.ClampMagnitude(internalVelocity + movementVector*currentSpinRatio * acceleration * Time.deltaTime, internalMax);
             }
             else {
                 internalVelocity = Vector3.ClampMagnitude(internalVelocity - internalVelocity * acceleration * Time.deltaTime, internalMax);
@@ -180,7 +185,7 @@ public class SeedMovement : MonoBehaviour
     {
         float rotationSpeedIncreasePerSecond = 0;
 
-        if (grounded) {
+        if (grounded||startFalling) {
             if (rotVel > 0)
             {
                 rotVel -= decelerationSpeed * Time.deltaTime;

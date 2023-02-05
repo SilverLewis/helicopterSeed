@@ -10,7 +10,9 @@ public class TreeManager : MonoBehaviour
     [SerializeField] GameObject player,winText,loseText;
     [SerializeField] onGroundBar barRef;
     [SerializeField] ScreenFader loadUI;
-    [SerializeField] float minuimStatTime ;
+    [SerializeField] UIStats endText;
+    [SerializeField] float minuimStatTime;
+    [SerializeField] float StartingHeightOffset =40;
     int cycle = 1;
     float heighestEver;
     int startingTrees;
@@ -50,8 +52,8 @@ public class TreeManager : MonoBehaviour
             }
         }
         print(highest);
-        heighestEver = highest.y + 20;
-        return highest+Vector3.up*20;
+        heighestEver = highest.y + StartingHeightOffset;
+        return highest+Vector3.up* StartingHeightOffset;
     }
 
     // Update is called once per frame
@@ -81,6 +83,7 @@ public class TreeManager : MonoBehaviour
     }
     IEnumerator RespawnProcess()
     {
+        endText.UpdateEndText();
         yield return new WaitForSeconds(1);//time you get to just look at the win / loss on the ground
         loadUI.FadeImage(1, 0);
         yield return new WaitForSeconds(loadUI.timeToFade+loadUI.delay);
