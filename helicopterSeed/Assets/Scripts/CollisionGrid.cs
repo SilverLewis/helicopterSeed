@@ -11,7 +11,7 @@ public class CollisionGrid : MonoBehaviour
     public static CollisionGrid instance;
     protected Dictionary<Vector3Int?,GridObject> ObjectGrid= new Dictionary<Vector3Int?, GridObject>();
     protected Dictionary<GridObject, Vector3Int?> InverseGrid = new Dictionary<GridObject, Vector3Int?>();
-    int hardFloor = -1;
+    int hardFloor = -1,hardHorizontalBottom=-200,hardHorizontalTop=200;
     public GridObject floorReference;
     // Start is called before the first frame update
     void Awake()
@@ -45,7 +45,7 @@ public class CollisionGrid : MonoBehaviour
         }
         else
         {
-            if (position.Value.y <= floorReference.transform.position.y)
+            if (position.Value.y <= floorReference.transform.position.y || position.Value.x<hardHorizontalBottom || position.Value.x>hardHorizontalTop|| position.Value.z<hardHorizontalBottom || position.Value.z>hardHorizontalTop)
             {
                 if (debug)
                 {

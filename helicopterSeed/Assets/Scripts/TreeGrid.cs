@@ -34,7 +34,7 @@ public class TreeGrid : CollisionGrid
             YearlyIteration();
         }
     }
-    void YearlyIteration()
+    public void YearlyIteration()
     {
         int tokensToSpend = Random.Range(minGrowthTokens, maxGrowthTokens);// this can be replaced with a method if we ever make it more variable than that
         int tokensSpent = 0;

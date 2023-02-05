@@ -64,9 +64,10 @@ public class SeedMovement : MonoBehaviour
     [Space(5)]
     [Header("Bar")]
     [SerializeField] GameObject BarHolder;
+    [SerializeField] TreeManager treeManagerRef;
     onGroundBar barScript;
 
-
+    string lastTagTouched;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +76,7 @@ public class SeedMovement : MonoBehaviour
         terminalDelta = terminalYVelocity - spinningterminalYVelocity;
         barScript = BarHolder.GetComponent<onGroundBar>();
     }
-
+   
     private void FixedUpdate()
     {
         bool grounded = IsGrounded();
@@ -166,6 +167,12 @@ public class SeedMovement : MonoBehaviour
         }
         else if(rotVel<=0 && Vector3.Magnitude(movementVector)>0 && CanJump()) {
             Jump(movementVector);
+        }
+
+        if (barScript.dead)
+        {
+            treeManagerRef.OnPlayerLanded(lastTagTouched == "Soil");
+            enabled = false;
         }
     }
 
@@ -308,5 +315,9 @@ public class SeedMovement : MonoBehaviour
         }
 
         return rotation;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        lastTagTouched = collision.collider.tag;
     }
 }

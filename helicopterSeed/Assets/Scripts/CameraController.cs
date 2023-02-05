@@ -37,8 +37,8 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         if (cameraMovementEnabled) {
-            float verticalRotationChange = 0;// Input.GetAxis("VerticalCamera") * Time.deltaTime * verticalRotationSpeed;
-            float horizontalRotationChange = 0;// -Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed;
+            float verticalRotationChange =  Input.GetAxis("VerticalCamera") * Time.deltaTime * verticalRotationSpeed;
+            float horizontalRotationChange = Input.GetAxis("HorizontalCamera") * Time.deltaTime * horizontalRotationSpeed;
 
            Vector3 rotation =cameraPivot.rotation.eulerAngles;
 

@@ -20,7 +20,7 @@ public class onGroundBar : MonoBehaviour
     bool fadingOut = false;
 
     public float rate;
-    
+    public bool dead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,13 @@ public class onGroundBar : MonoBehaviour
         maxWidth = movingBar.sizeDelta.x;
         TimeToDeath = MaxTimeToDeath;
     }
+    public void ResetShit()
+    {
 
+        fadeOutCounter = 0;
+        TimeToDeath = MaxTimeToDeath;
+        dead = false;
+    }
     private void Update()
     {
         DeathPercent(TimeToDeath/MaxTimeToDeath);
@@ -41,9 +47,14 @@ public class onGroundBar : MonoBehaviour
                 StartCoroutine(FadeOut());
             }
         }
+        else if (TimeToDeath == 0 && !dead)
+        {
+            dead = true;
+        }
         else {
             fadeOutCounter = 0;
         }
+
     }
 
     public void Grounded() {
