@@ -39,7 +39,7 @@ public class TreeManager : MonoBehaviour
         startingTrees = trees.Count;
 
         coin.coinCount = 20;
-        StartCoroutine(IterateAllTrees());
+        IterateAllTrees();
         coin.coinCount = 0;
         player.transform.position = GetSpawnPoint();
         player.gameObject.SetActive(true);
@@ -107,12 +107,11 @@ public class TreeManager : MonoBehaviour
         winText.SetActive(false);
 
         player.gameObject.SetActive(false);
-        Coroutine iter = StartCoroutine(IterateAllTrees());
 
         StartCoroutine(FadeIn());
         yield return new WaitForSeconds(minuimStatTime);
 
-        yield return iter;
+        IterateAllTrees();
 
         coin.coinCount = 0;
         player.transform.position = GetSpawnPoint();
@@ -134,7 +133,7 @@ public class TreeManager : MonoBehaviour
     /// ill do this as an ienumerator so theres like, a chance at a loading bar
     /// </summary>
     /// <returns></returns>
-    IEnumerator IterateAllTrees()
+    void IterateAllTrees()
     {
         foreach(TreeGrid eachTree in trees)
         {
@@ -142,7 +141,6 @@ public class TreeManager : MonoBehaviour
             //yield return null;
             //this is where a loading bar would update
         }
-        yield return null;
     }
 
     IEnumerator FadeOut()
