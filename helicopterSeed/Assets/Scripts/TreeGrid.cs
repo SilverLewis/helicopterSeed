@@ -44,7 +44,7 @@ public class TreeGrid : CollisionGrid
             BranchInfo placeToSpawnFrom = GetViableSpot(); //this updates knowledge of which spawns are gonna be viable and which are blocked
             if (placeToSpawnFrom == null)
             {
-                print("damn no spawns available! ending iteration!");
+                //print("damn no spawns available! ending iteration!");
                 break;
             }
 
@@ -59,7 +59,7 @@ public class TreeGrid : CollisionGrid
         //DetermineCurrentlyViableBranches(); //just doing this again so the weights end up accurate
         if (tokensSpent != tokensToSpend)
         {
-            print("had " + (tokensToSpend - tokensSpent) + " tokens remaining");
+            //print("had " + (tokensToSpend - tokensSpent) + " tokens remaining");
         }
     }
 
@@ -150,7 +150,7 @@ public class TreeGrid : CollisionGrid
 
     void DetermineCurrentlyViableBranches()
     {
-        //print(ObjectGrid.Values.Count);
+        ////print(ObjectGrid.Values.Count);
         foreach(BranchInfo eachBranchPiece in ObjectGrid.Values)
         {
             eachBranchPiece.DetermineFreeGrowPoints();

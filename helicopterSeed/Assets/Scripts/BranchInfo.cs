@@ -22,7 +22,7 @@ public class BranchInfo : GridObject
             treeRef = transform.parent.GetComponent<TreeGrid>();
             if (treeRef == null)
             {
-                print("this piece isnt in a tree!");
+                //print("this piece isnt in a tree!");
             }
             else
             {
@@ -42,7 +42,7 @@ public class BranchInfo : GridObject
         {
             if (treeRef.GetPositionOfObject(this) == null)
             {
-                //print("added object to tree");
+                ////print("added object to tree");
                 treeRef.AddObject(this, new Vector3Int?(Vector3Int.RoundToInt(transform.position)));
                 treeRef.currentlyViableBranches.Add(this);//assume a new one is viable, the quick check will determine if it is or not
             }
@@ -73,7 +73,7 @@ public class BranchInfo : GridObject
                 if (!freeGrowPoints.Contains(branchPoint))
                 {
                     freeGrowPoints.Add(branchPoint);
-                    print("found a free point");
+                    //print("found a free point");
                 }
                 float upNess = Mathf.Round(branchPoint.up.y);
                 if (upNess >0)
@@ -91,13 +91,13 @@ public class BranchInfo : GridObject
             }
             else
             {
-                //prints hwats in tha way
-                //print(gridRef.GetObjectAtPosition(new Vector3Int?(positionAlongGrowPoint), false));
+                ////prints hwats in tha way
+                ////print(gridRef.GetObjectAtPosition(new Vector3Int?(positionAlongGrowPoint), false));
                 //if theres something in the way its not free
                 if (freeGrowPoints.Contains(branchPoint))
                 {
                     freeGrowPoints.Remove(branchPoint);
-                    print("removed a blocked point"); 
+                    //print("removed a blocked point"); 
                     
                 }
             }

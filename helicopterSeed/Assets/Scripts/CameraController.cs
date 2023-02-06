@@ -41,16 +41,10 @@ public class CameraController : MonoBehaviour
             invertCamera *=-1 ;
         }
 
-        float vert = Input.GetAxis("VerticalCamera");
-        if (vert == 0) {
-            vert = Input.GetAxis("VerticalCamera2");
-        }
+        float vert = Mathf.Clamp(Input.GetAxis("VerticalCamera") + Input.GetAxis("VerticalCamera2"),-1,1);
+        
 
-        float hor = Input.GetAxis("HorizontalCamera");
-        if (hor == 0)
-        {
-            hor = Input.GetAxis("HorizontalCamera2");
-        }
+        float hor = Mathf.Clamp(Input.GetAxis("HorizontalCamera") + Input.GetAxis("HorizontalCamera2"),-1,1);
 
 
         float verticalRotationChange = vert*invertCamera * Time.deltaTime * verticalRotationSpeed;

@@ -49,13 +49,13 @@ public class CollisionGrid : MonoBehaviour
             {
                 if (debug)
                 {
-                    print("hit rock bottom");
+                    //print("hit rock bottom");
                 }
                 return floorReference;
             }
             if (debug)
             {
-                print("no object at position");
+                //print("no object at position");
             }
             toReturn = null;
         }
@@ -69,7 +69,7 @@ public class CollisionGrid : MonoBehaviour
         {
             if (debug)
             {
-                print("object not in grid");
+                //print("object not in grid");
             }
             return null;
         }
@@ -86,7 +86,7 @@ public class CollisionGrid : MonoBehaviour
         {
             if (!overwrite)
             {
-                print("there's already something there");
+                //print("there's already something there");
                 return false;
             }
             else
@@ -108,7 +108,7 @@ public class CollisionGrid : MonoBehaviour
         Vector3Int? posOfGuy = GetPositionOfObject(objectToRemove);
         if (posOfGuy == null)
         {
-            print("cant remove, guy has no position in grid");
+            //print("cant remove, guy has no position in grid");
             return false;
         }
         else

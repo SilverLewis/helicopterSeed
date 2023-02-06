@@ -32,7 +32,7 @@ public class GridObject : MonoBehaviour
         }
         else if(debug)
         {
-            print("tried to add self to grid, but ur already in there.");
+            //print("tried to add self to grid, but ur already in there.");
         }
     }
     protected virtual void RemoveFromGrid()

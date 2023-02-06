@@ -59,7 +59,7 @@ public class TreeManager : MonoBehaviour
                 highest = trees[i].highestPosition;
             }
         }
-        print(highest);
+        //print(highest);
         heighestEver = highest.y + StartingHeightOffset;
         return highest+Vector3.up* StartingHeightOffset;
     }
@@ -77,7 +77,7 @@ public class TreeManager : MonoBehaviour
             winText.SetActive(true);
             Vector3Int treeSpawn = Vector3Int.RoundToInt(player.transform.position)+Vector3Int.down;
             player.gameObject.SetActive(false);
-            print(treeSpawn + " new tree here!");
+            //print(treeSpawn + " new tree here!");
             GameObject newTree = Instantiate(freshTreePrefab, treeSpawn, Quaternion.identity, transform);
             if (newTree.GetComponent<TreeGrid>())
             {
@@ -139,9 +139,10 @@ public class TreeManager : MonoBehaviour
         foreach(TreeGrid eachTree in trees)
         {
             eachTree.YearlyIteration();
-            yield return null;
+            //yield return null;
             //this is where a loading bar would update
         }
+        yield return null;
     }
 
     IEnumerator FadeOut()

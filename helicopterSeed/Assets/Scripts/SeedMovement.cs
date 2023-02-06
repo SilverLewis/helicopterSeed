@@ -262,7 +262,7 @@ public class SeedMovement : MonoBehaviour
                 barScript.Grounded();
                 if (!hit.collider.gameObject.CompareTag("coin"))
                 {
-                    print(hit.collider.gameObject.tag);
+                    //print(hit.collider.gameObject.tag);
                     return true;
                 }
             }
@@ -282,7 +282,7 @@ public class SeedMovement : MonoBehaviour
                 {
                     if (!hit.collider.gameObject.CompareTag("coin"))
                     {
-                        print(hit.collider.gameObject.tag);
+                        //print(hit.collider.gameObject.tag);
                         return cardinalVectors[j];
                     }
                 }

@@ -442,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1869310558737049775, guid: cfcef4f5949b4104ba6bb68e10cda055, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1869310558737049775, guid: cfcef4f5949b4104ba6bb68e10cda055, type: 3}
       propertyPath: m_LocalPosition.y
@@ -710,7 +710,7 @@ MonoBehaviour:
   blowingtimeMinMax: {x: 4, y: 10}
   updraftBlowingtimeMinMax: {x: 3, y: 5}
   windSound: {fileID: 483214818}
-  windVolumeMinMax: {x: 0.1, y: 0.6}
+  windVolumeMinMax: {x: 0.35, y: 1}
   windPitchMinMax: {x: 0.7, y: 1.3}
   windPanDelta: -0.7
 --- !u!182 &483214814
@@ -7173,6 +7173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a43aa5cca13794db4b2769b5f56dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 821130208}
+  zMinAxis: -205
+  zMaxAxis: 205
+  xMinAxis: -205
+  xMaxAxis: 205
   windDirection: {x: 0, y: 0, z: 0}
   windPower: 0
   windYPowerMultiplier: 12

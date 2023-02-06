@@ -107,7 +107,7 @@ public class Wind : MonoBehaviour
 
         transform.rotation =  Quaternion.LookRotation(direction,Vector3.up);
 
-        print("Wind Direction:" + direction);
+        //print("Wind Direction:" + direction);
 
         step = strengthGoal / 100;
         for (float i = strength; i < strengthGoal; i += step)
